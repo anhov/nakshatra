@@ -1,7 +1,7 @@
 import { BirthProfile } from '../context/UserContext';
 
 // iOS simulator: localhost. Android emulator: 10.0.2.2. Physical device: your machine IP.
-const BASE = 'http://localhost:8000/api/v1';
+const BASE = 'http://192.168.10.110:8000/api/v1';
 
 // Set this via in-app purchase / server validation in production.
 // Stored in-app; never calculated on device.

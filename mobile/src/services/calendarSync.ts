@@ -1,7 +1,7 @@
 import * as Calendar from 'expo-calendar';
 import { BirthProfile } from '../context/UserContext';
 
-const BASE = 'http://localhost:8000/api/v1';
+const BASE = 'http://192.168.10.110:8000/api/v1';
 
 export interface DeviceEvent {
   id: string;
