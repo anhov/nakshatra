@@ -69,8 +69,12 @@ export const fetchBestDays = (p: BirthProfile, category: string, daysAhead = 90)
   get('/find-best-day', { ...birthParams(p), category, days_ahead: daysAhead });
 
 // ── Birth Chart + Dasha ────────────────────────────────────────────────────
+// /chart/birth uses `date` + `time`; all other birth endpoints use `birth_date` + `birth_time`
 export const fetchBirthChart = (p: BirthProfile) =>
-  get('/chart/birth', { ...birthParams(p) });
+  get('/chart/birth', {
+    date: p.birthDate, time: p.birthTime,
+    tz: p.timezone, lat: p.latitude, lon: p.longitude,
+  });
 
 export const fetchDasha = (p: BirthProfile) =>
   get('/dasha', { ...birthParams(p) });
